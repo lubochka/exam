@@ -10,14 +10,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
-
+import { ProductNewComponent } from './product-new/product-new.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyFilterPipe,
     ProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductNewComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     BrowserAnimationsModule,
     MaterialModule,
     NgbModule,
-    
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,8 @@
+<p>product-new works!</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f,product)"  novalidate>
+   
+    <input name="name" placeholder="Name" ngModel required [(ngModel)]="product.name" #name="ngModel">
+    <input name="description" placeholder="Description" ngModel required [(ngModel)]="product.description" #name="ngModel">
+    <input name="price" placeholder="Price" ngModel required [(ngModel)]="product.price" #name="ngModel">
+<button >Submit</button>
+</form>
