@@ -11,7 +11,7 @@ import {map, startWith} from 'rxjs/operators';
 export class AutoCompleteComponent implements OnInit {
   
   myControl = new FormControl();
-  @Input() options:any[]=[];
+  @Input() options:string[]=[];
   @Input() title:string='';
   @Input() placeholder:string='';
   @Output() NodeSelected = new EventEmitter();

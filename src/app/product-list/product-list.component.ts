@@ -16,6 +16,7 @@ import { SaveProducts, LoadProducts } from '../_shared/useful_func';
 export class ProductListComponent implements OnInit {
   addNew:boolean=false;
   constructor() { }
+  options:string[]=[];
   products:Product[] = [{id :1, name:'Windstorm', description:'some product', price:100,creationDate:new Date("Fri Dec 08 2019 07:44:57"), edit:false}]
   ngOnInit(): void {
     let productsStorage =LoadProducts();
@@ -23,6 +24,7 @@ export class ProductListComponent implements OnInit {
     {
       this.products=productsStorage;
     } 
+    this.makeOptionsFromProducts();
   }
 
   openProductForm()
@@ -33,6 +35,7 @@ export class ProductListComponent implements OnInit {
   {
     this.products.push(product);
     SaveProducts(this.products);
+    this.makeOptionsFromProducts();
     this.addNew=false;
   }
 
@@ -41,6 +44,18 @@ export class ProductListComponent implements OnInit {
     
     this.products=this.products.filter(a=>a.id!= product.id);
     SaveProducts(this.products);
+    this.makeOptionsFromProducts();
+  }
+
+  selectedValue(productName:string)
+  {
+    this.products=this.products.filter(a=>a.name!= productName);
+    
+  }
+
+  makeOptionsFromProducts()
+  {
+    this.options=this.products.map(a=>a.name);
   }
 
 }
