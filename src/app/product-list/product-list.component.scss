@@ -1,0 +1,18 @@
+.grid{
+    display: table;
+    width: 100%;
+}
+.main-row
+{
+    display: table-row;
+    width: 100%;
+}
+.right-column{
+    display: table-cell;
+    width: 60%;
+
+}
+.left-column{
+    display: table-cell;
+    width: 40%;
+}

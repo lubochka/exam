@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../_shared/Models/product';
-import { SaveProducts, LoadProducts } from '../_shared/useful_func';
+import { SaveProducts, LoadProducts ,compareDates} from '../_shared/useful_func';
 
 @Component({
   selector: 'app-product-list',
@@ -17,6 +17,7 @@ export class ProductListComponent implements OnInit {
   addNew:boolean=false;
   constructor() { }
   options:string[]=[];
+  sorted:boolean=false;
   products:Product[] = [{id :1, name:'Windstorm', description:'some product', price:100,creationDate:new Date("Fri Dec 08 2019 07:44:57"), edit:false}]
   ngOnInit(): void {
     let productsStorage =LoadProducts();
@@ -41,7 +42,7 @@ export class ProductListComponent implements OnInit {
 
   deleteProduct(product:Product)
   {
-    
+ 
     this.products=this.products.filter(a=>a.id!= product.id);
     SaveProducts(this.products);
     this.makeOptionsFromProducts();
@@ -58,4 +59,19 @@ export class ProductListComponent implements OnInit {
     this.options=this.products.map(a=>a.name);
   }
 
+  sortListByDates()
+  {
+    if(!this.sorted)
+    {
+      this.products=this.products.sort((a,b)=>compareDates(a.creationDate,b.creationDate));
+      this.sorted=true;
+    }
+    else
+    {
+      {
+        this.products=this.products.sort((a,b)=>compareDates(b.creationDate,a.creationDate));
+        this.sorted=false;
+      }
+    }
+  }
 }

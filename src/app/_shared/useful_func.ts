@@ -1,4 +1,5 @@
 import { Product } from "./Models/product";
+const _MS_PER_DAY = 1000 * 60 * 60 * 24*60;
 
 export function SaveProducts(products:Product[])
 {
@@ -14,3 +15,8 @@ export function LoadProducts()
     }
     else return [];
 }
+
+export function compareDates(a:Date, b:Date) {
+   
+    return Math.floor((a.getTime() - b.getTime()) / _MS_PER_DAY);
+  }
