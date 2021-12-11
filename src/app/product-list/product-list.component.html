@@ -1,4 +1,4 @@
 <h1>Product List</h1>
 <button mat-raised-button (click)="openProductForm()">Add New</button>
-<div *ngIf="addNew" ><app-product-new (ProductCreated)="productCreated($event)"></app-product-new></div>
-<app-product *ngFor="let product of products" [product]="product"></app-product>
+<div *ngIf="addNew" ><app-product-new (ProductCreated)="productCreated($event)" ></app-product-new></div>
+<app-product *ngFor="let product of products" [product]="product" (ProductDeleted)="deleteProduct($event)" ></app-product>

@@ -36,4 +36,11 @@ export class ProductListComponent implements OnInit {
     this.addNew=false;
   }
 
+  deleteProduct(product:Product)
+  {
+    
+    this.products=this.products.filter(a=>a.id!= product.id);
+    SaveProducts(this.products);
+  }
+
 }
