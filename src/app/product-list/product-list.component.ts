@@ -50,7 +50,7 @@ export class ProductListComponent implements OnInit {
 
   selectedValue(productName:string)
   {
-    this.products=this.products.filter(a=>a.name!= productName);
+    this.products=this.products.filter(a=>a.name== productName);
     
   }
 
