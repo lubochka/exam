@@ -18,7 +18,7 @@ export class ProductNewComponent implements OnInit {
 
   onSubmit(f: NgForm,product:Product) {
 
-    product.edit= product.edit==true? false : true;
+    product.edit= false;
     product.id=Math.floor(Math.random() * 100)
     
     this.ProductCreated.emit(product)
