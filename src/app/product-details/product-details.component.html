@@ -1,8 +1,9 @@
 <mat-card>
-
+    <h2>Product details of {{product.id}}</h2>
     <h2>{{product.name}}</h2>
     <h3>{{product.description}}</h3>
     <h3>{{product.price}}</h3>
     <h3>{{product.creationDate}}</h3>
+    <button mat-raised-button (click)="cancelEdit(product)">Close</button>
 </mat-card>
 

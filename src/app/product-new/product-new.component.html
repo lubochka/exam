@@ -1,4 +1,3 @@
-<p>product-new works!</p>
 <form #f="ngForm" (ngSubmit)="onSubmit(f,product)"  novalidate>
    
     <input name="name" placeholder="Name" ngModel required [(ngModel)]="product.name" #name="ngModel">

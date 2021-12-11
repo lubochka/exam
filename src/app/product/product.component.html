@@ -1,7 +1,8 @@
 
 
-<mat-card>
+<mat-card (dblclick)="viewDetails(product)">
     <h2>{{product.name}}</h2>
     <h3>{{product.price}}</h3>
+    
     <button mat-raised-button (click)="productDelete(product)">Delete</button>
 </mat-card>

@@ -13,4 +13,9 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cancelEdit(product:Product)
+  {
+    product.edit=false;
+  }
+
 }
